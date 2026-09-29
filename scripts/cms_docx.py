@@ -14,7 +14,7 @@ Kurallar (gameplus-oyun-detay-sayfasi-kurallari.docx ve CMS örnek dosyası, 28.
   Türkçe harf ASCII'ye katlanır, küçük harf, tire).
 - Meta title: "{Oyun adı} - GeForce NOW | Gameplus".
 - Meta description: "{Oyun adı}, GeForce NOW powered by GAME+ kütüphanesinde. {Tür} türündeki oyunu bulut
-  üzerinden oyna." Tür, GFN kaydındaki genres[0] alanının karşılığıdır.
+  üzerinden oyna." Tür, GFN kaydındaki genres[0] alanının karşılığıdır (FREE_TO_PLAY atlanır, sıradaki tür alınır).
 - Uzun açıklama: gövdenin sade HTML'i (h2, h3, p, ul, ol, table, a, strong); belge başlığı ve SSS girmez,
   satır içi stil ve font yoktur.
 - FAQ: başlık "{Oyun adı} Hakkında Sık Sorulan Sorular" (içerikteki oyun adı). CMS örneğindeki buton + toggleFaq yapısı korunur, görünüm blog SSS'siyle aynıdır (kenarlıklı kart,
@@ -191,7 +191,8 @@ def main():
     ad = temiz_ad(g["title"])
     url = f"{a.alan.rstrip('/')}/gfn/oyun/{slug(g['title'])}"
     title = f"{ad} - GeForce NOW | Gameplus"
-    tur = TUR.get((g.get("genres") or [None])[0])
+    # FREE_TO_PLAY bir iş modeli, tür değil: "Oynaması Ücretsiz türündeki oyun" okunmuyor, sıradaki türe geçilir
+    tur = TUR.get(next((x for x in g.get("genres") or [] if x != "FREE_TO_PLAY"), None))
     desc = f"{ad}, GeForce NOW powered by GAME+ kütüphanesinde." + (f" {tur} türündeki oyunu bulut üzerinden oyna." if tur else "")
     uzun, sss = uzun_aciklama(d), faq(d)
     for yasak in ("@font-face", "data:font", ".woff", ".otf", "gp-content", "<style"):
