@@ -43,7 +43,7 @@ TEKRAR_DISI = {"oyunu", "oyunl", "oyunc", "oynan", "oynay", "oynam", "oynad", "g
                "perfo", "paket", "hesab", "kütüp", "sunuc", "bulut", "kadar"}
 
 TEKNOLOJI = {"HDR_ENABLED": ("HDR", r"\bHDR\b"),
-             "RTX_ENABLED": ("RTX", r"\bRTX\b|ışın izleme"),
+             "RTX_ENABLED": ("RTX", r"\bRTX\b(?!\s*\d)|ışın izleme"),  # "RTX 3060" ekran kartı adı, özellik değil
              "REFLEX_ENABLED": ("NVIDIA Reflex", r"\bReflex\b")}
 
 
