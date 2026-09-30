@@ -93,8 +93,9 @@ def main():
     kelime = len(govde_metin.split())
     h2 = [v for t, v in g if t == "H2"]
     h3 = [v for t, v in g if t == "H3"]
+    # 1200-1500 ortalama hedeftir, sert sınır değil (kullanıcı kararı 30.09.2026)
     if not 1200 <= kelime <= 1550:
-        sorun.append(f"gövde {kelime} kelime; 1200-1500 bandı dışında")
+        uyari.append(f"gövde {kelime} kelime; ortalama hedef 1200-1500")
     if not 7 <= len(h2) <= 9:
         sorun.append(f"{len(h2)} H2 var; 7-9 olmalı")
     if g[0][0] != "p":
@@ -211,8 +212,11 @@ def main():
         sorun.append("SSS'de Türkçe sorusu yok; destek olmasa da sorulur")
     for q, c in d["sss"]:
         n = len(c.split())
-        if not 20 <= n <= 60:
-            sorun.append(f"SSS yanıtı {n} kelime: {q}")
+        # soruyu düzgünce karşılayan kısa yanıt kabul (kullanıcı kararı 30.09.2026); üst sınır 60
+        if n > 60:
+            sorun.append(f"SSS yanıtı {n} kelime (en fazla 60): {q}")
+        elif n < 20:
+            uyari.append(f"SSS yanıtı {n} kelime, soruyu karşıladığı kontrol edilsin: {q}")
 
     # teknoloji bayrakları
     # Paket cümleleri ("Ultimate paketleri GeForce RTX 4080 sunucularda 4K HDR…") hizmetin
