@@ -169,10 +169,19 @@ def docx_yaz(yol, alanlar):
     from docx.shared import Pt, RGBColor
     doc = Document()
     st = doc.styles["Normal"]; st.font.name = "Calibri"; st.font.size = Pt(11)
+    # Alan etiketleri Heading 2: Google Docs'un "Document tabs" anahatında görünür, alanlara tek tıkla gidilir
+    # (kullanıcı kendi düzenlediği BF6 dosyasıyla istedi, 02.10.2026)
+    h2 = doc.styles["Heading 2"]; h2.font.name = "Calibri"; h2.font.size = Pt(14); h2.font.bold = True
+    h2.font.color.rgb = RGBColor.from_string("000000")
+    onceki_kod = False
     for etiket, deger, kod in alanlar:
-        p = doc.add_paragraph(); r = p.add_run(etiket); r.bold = True
-        r.font.color.rgb = RGBColor.from_string("10332F")
+        if onceki_kod:
+            doc.add_paragraph()
+        p = doc.add_heading(etiket, level=2)
         p.paragraph_format.space_before = Pt(14); p.paragraph_format.space_after = Pt(4)
+        if kod:
+            doc.add_paragraph()
+        onceki_kod = kod
         for satir in deger.split("\n"):
             q = doc.add_paragraph(); q.paragraph_format.space_after = Pt(0); q.paragraph_format.space_before = Pt(0)
             r = q.add_run(satir)
