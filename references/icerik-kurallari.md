@@ -425,6 +425,10 @@ oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı
 - **Zamana bağlı ifadeler:** "çıkacak", "yakında", "şu an en son çıkan", "... için duyurdu" gibi
   tarih geçince yanlışa düşen ifadeler yazılmaz. Tarihli, zamandan bağımsız kalıp kullanılır: "23 Ekim 2026
   çıkış tarihli Modern Warfare 4", "15 Ekim 2026 tarihli Charting the Unknown genişlemesiyle birlikte".
+- **Gereksiz tarih (27 Ekim 2026):** tarih yalnız çıkış ve genişleme gibi kalıcı olaylara bağlanır.
+  GeForce NOW kütüphane durumu, Türkçe desteği gibi değişebilen bilgiler tarihle yazılmaz: "27 Ekim 2026
+  itibarıyla GeForce NOW kütüphanesinde" değil "GeForce NOW kütüphanesinde yer alıyor". Tablo başlığında
+  "Bir Bakışta" kalıbı ve tarih kullanılmaz; başlık içeriği tarif eder ("Sürümler ve İçerikleri" gibi).
 - **Düşük puanı saklamak:** Metacritic kullanıcı skoru düşük olsa da listeden çıkarılmaz; sayfa oyunu
   değil bulut hizmetini satar ve objektif puan okuyucunun güvenini artırır.
 - Marka sembolleri (® ™), emoji, uzun tire.

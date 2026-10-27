@@ -58,6 +58,7 @@
 - [ ] SSS'de "Türkçe mi?" sorusu var mı? Destek yoksa "Hayır" ile yanıtlandı mı, gövdede tek cümleyle belirtildi mi, ayrı H2 açılmadı mı?
 - [ ] Türkçe kapsamı menü / altyazı / Türkçe dublaj terimleriyle mi yazılmış, brief'in dil sütunuyla uyumlu mu? Mağaza farkı ("Steam sürümünde yok, Battle.net'te var") yazılmış mı? (yazılmamalı)
 - [ ] "Çıkacak", "yakında", "şu an en son" gibi tarih geçince eskiyen ifade var mı? (olmamalı; tarihli kalıp kullanılır)
+- [ ] GeForce NOW durumu ya da Türkçe desteği tarihle mi yazılmış ("27 Ekim 2026 itibarıyla")? (olmamalı; tarih yalnız çıkış ve genişleme için) Tablo başlığında "Bir Bakışta" ya da tarih var mı? (olmamalı)
 - [ ] Teknik değer kümeleri tabloya alındı mı?
 - [ ] Puan, gereksinim, boyut ve dil listesi **PC sürümünden** mi alınmış? Metacritic puanı "PC puanı" olarak mı yazılmış?
 - [ ] Doğrulanmamış sayı var mı? Her sayının kaynağı belli mi? Resmi değeri olmayan boyut ya da süre, iki kaynağa dayanan ortalama aralık olarak mı verildi?

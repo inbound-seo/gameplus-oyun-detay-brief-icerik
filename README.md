@@ -66,6 +66,7 @@ değerlendirmelerdir ve ayrı bir iş görür.
 - Doğrulanamayan sayı kesin değer gibi yazılmaz; resmi değeri olmayan boyut ya da süre için iki kaynaktan ortalama aralık verilir, kaynaklar örtüşmüyorsa alan boş bırakılır ve durum ekibe bildirilir.
 - "Türkçe mi?" sorusu her oyunun SSS'sinde yer alır; oyunda resmi dil olarak yoksa "Hayır" ile yanıtlanır.
 - Çıkış ve güncelleme tarihleri zamandan bağımsız yazılır ("23 Ekim 2026 çıkış tarihli"); "çıkacak", "yakında" yazılmaz.
+- Gerekmedikçe tarih verilmez: GeForce NOW kütüphane durumu ve Türkçe desteği tarihsiz yazılır ("GeForce NOW kütüphanesinde yer alıyor"); tablo başlığında "Bir Bakışta" ve tarih yok.
 
 Ayrıntılar `SKILL.md` ve `references/` altında.
 
